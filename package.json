@@ -1,0 +1,17 @@
+{
+    "name": "editory",
+    "version": "1.0.0",
+    "description": "A clean, responsive, and customizable text editor template with dark mode support",
+    "scripts": {
+        "build": "rollup -c rollup.config.js && node copyStyles.js",
+        "copy-styles": "node copyStyles.js",
+        "dev": "rollup -c -w",
+        "type-check": "tsc --noEmit",
+        "type-check:watch": "npm run type-check -- --watch"
+    },
+    "devDependencies": {
+        "@rollup/plugin-typescript": "^8.3.3",
+        "rollup": "^2.75.6",
+        "typescript": "^4.7.4"
+    }
+}

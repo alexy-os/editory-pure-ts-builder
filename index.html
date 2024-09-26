@@ -1,0 +1,182 @@
+<html>
+
+<head>
+  <title>EditorY - Dashboard</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="EditorY: A clean, responsive, and customizable admin dashboard template with dark mode support, built using TailwindCSS">
+  <link rel="icon" type="image/svg"
+    href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMzN2I5ZjMiIHN0cm9rZS13aWR0aD0iMi41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWxheW91dC10ZW1wbGF0ZSI+PHJlY3Qgd2lkdGg9IjE4IiBoZWlnaHQ9IjciIHg9IjMiIHk9IjMiIHJ4PSIxIi8+PHJlY3Qgd2lkdGg9IjkiIGhlaWdodD0iNyIgeD0iMyIgeT0iMTQiIHJ4PSIxIi8+PHJlY3Qgd2lkdGg9IjUiIGhlaWdodD0iNyIgeD0iMTYiIHk9IjE0Ii byeD0iMSIvPjwvc3ZnPg==" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              100: "#e0f2fe",
+              600: "#0284c7",
+              700: "#0369a1",
+            },
+            secondary: '#4B5DFF',
+            sky: {
+              100: '#e0f2fe',
+              200: '#bae6fd',
+              600: '#0284c7',
+              700: '#0369a1',
+            },
+            slate: {
+              900: '#0f172a',
+            }
+          },
+        },
+        fontFamily: {
+          sans: ["Nunito", "sans-serif"],
+        },
+          borderRadius: {
+            'sm': '0.1875rem',
+            DEFAULT: '0.375rem',
+            'md': '0.5625rem',
+            'lg': '0.75rem',
+            'xl': '1.125rem',
+            '2xl': '1.5rem',
+            '3xl': '2.25rem',
+          },
+          boxShadow: {
+            sm: '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
+            DEFAULT: '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
+            md: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+            lg: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+            xl: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+            '2xl': '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
+            inner: 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)',
+            none: 'none',
+          }
+      },
+    };
+  </script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="../dist/editor-styles.css">
+</head>
+
+<body class="bg-slate-100 dark:bg-slate-900 text-slate-800 dark:text-slate-200 font-sans transition-colors duration-200">
+  <div class="flex h-screen overflow-hidden">
+    <div id="sidebar-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-20 hidden md:hidden"></div>
+    <aside id="sidebar" class="w-64 bg-white dark:bg-slate-800 border-r border-slate-200 dark:border-slate-700 p-4 fixed h-full z-30 md:relative transition-transform duration-300 ease-in-out transform -translate-x-full md:translate-x-0 shadow-xl md:shadow-none">
+      <div class="text-xl font-semibold mb-6 flex items-center">
+        <i data-lucide="layout-template" stroke-width="2.3" class="text-sky-600 dark:text-sky-100 w-5 h-5 mb-0.5 mr-1"></i>
+        Editor<span class="text-sky-600 mr-1">Y</span>
+      </div>
+      <nav>
+        <ul class="space-y-2">
+          <li>
+            <a href="#" class="block px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 text-sm">
+              <i data-lucide="braces" class="text-sky-600 dark:text-sky-100 w-4 h-4 mb-1 mr-1 inline"></i>
+              API Console
+            </a>
+          </li>
+          <li>
+            <a href="#" class="block px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 text-sm">
+              <i data-lucide="file" class="text-sky-600 dark:text-sky-100 w-4 h-4 mb-1 mr-1 inline"></i>
+              All pages
+            </a>
+          </li>
+          <li>
+            <a href="#" class="block px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 text-sm text-sky-600 dark:text-sky-200 bg-sky-100 dark:bg-slate-700">
+              <i data-lucide="file-plus-2" class="text-sky-600 dark:text-sky-100 w-4 h-4 mb-1 mr-1 inline"></i>
+              New page
+            </a>
+          </li>
+          <li>
+            <a href="#" class="block px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 text-sm">
+              <i data-lucide="search" class="text-sky-600 dark:text-sky-100 w-4 h-4 mb-1 mr-1 inline"></i>
+              Instruct
+            </a>
+          </li>
+          <li>
+            <a href="#" class="block px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 text-sm">
+              <i data-lucide="settings-2" class="text-sky-600 dark:text-sky-100 w-4 h-4 mb-1 mr-1 inline"></i>
+              Settings
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+    <main class="flex-1 flex flex-col overflow-hidden bg-slate-100 dark:bg-slate-900">
+      <header
+        class="sticky top-0 z-10 bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 p-3 flex justify-between items-center">
+        <button id="sidebar-toggle" class="md:hidden">
+          <i data-lucide="menu" class="w-5 h-5"></i>
+        </button>
+        <h2 class="text-base font-semibold">New page</h2>
+        <button id="darkModeToggle">
+          <i data-lucide="sun" class="w-5 h-5"></i>
+        </button>
+      </header>
+      <div class="flex-1 overflow-y-auto">
+        <div class="max-w-4xl mx-auto">
+          <div class="bg-slate-100 dark:bg-slate-900 p-8 md:p-10 lg:p-12">
+            <div id="editory-toolbar"></div>
+            <div id="editory"></div>
+            <div class="mx-auto mt-4 flex space-x-2">
+              <button id="add-block" class="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-lg text-white text-sm">Add Block</button>
+              <button id="import-json" class="bg-green-500  hover:bg-green-600 px-4 py-2 rounded-lg text-white text-sm">Import JSON</button>
+              <button id="export-json" class="bg-yellow-500 hover:bg-yellow-600 px-4 py-2 rounded-lg text-white text-sm">Export JSON</button>
+              <button id="reset-storage" class="bg-red-500 hover:bg-red-600 px-4 py-2 rounded-lg text-white text-sm">Reset Storage</button>
+              </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  
+  <script src="../dist/editory.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+
+      // Icons
+      lucide.createIcons();
+
+      // Dark mode toggle
+      const darkModeToggle = document.getElementById('darkModeToggle');
+      const htmlElement = document.documentElement;
+
+      darkModeToggle.addEventListener('click', () => {
+        htmlElement.classList.toggle('dark');
+        localStorage.setItem('darkMode', htmlElement.classList.contains('dark'));
+      });
+      
+      if (localStorage.getItem('darkMode') === 'true') {
+        htmlElement.classList.add('dark');
+        darkModeToggle.checked = true;
+      }
+
+      // Sidebar toggle
+      const sidebarToggle = document.getElementById("sidebar-toggle");
+      const sidebar = document.getElementById("sidebar");
+      const sidebarOverlay = document.getElementById("sidebar-overlay");
+
+      function toggleSidebar() {
+        sidebar.classList.toggle("-translate-x-full");
+        sidebarOverlay.classList.toggle("hidden");
+      }
+
+      sidebarToggle.addEventListener("click", toggleSidebar);
+      sidebarOverlay.addEventListener("click", toggleSidebar);
+
+      // Close sidebar on window resize (for responsiveness)
+      window.addEventListener("resize", () => {
+        if (window.innerWidth >= 768) {
+          sidebar.classList.remove("-translate-x-full");
+          sidebarOverlay.classList.add("hidden");
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
